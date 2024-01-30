@@ -1,0 +1,96 @@
+/*macker: 노윤호*/
+body {
+    background-color: #f6e58d; /* 노란색과 상아색이 섞인 배경색 */
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#user_name {
+    width: 100%;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10px; /* 둥근 모서리 */
+    border: none;
+    box-sizing: border-box;
+}
+
+#title {
+    font-size: 24px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#progress {
+    width: 200px;
+    height: 30px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #e74c3c; /* 기본 배경색을 빨간색으로 변경 */
+    position: relative; /* 새로운 게이지를 추가하기 위해 position을 relative로 설정 */
+}
+
+#progress::before {
+    content: '';
+    position: absolute; /* 새로운 게이지를 절대 위치로 설정 */
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #3498db; /* 새로운 게이지의 배경색을 파란색으로 설정 */
+    transition: width 0.5s ease;
+    z-index: 10; /* 파란색 게이지가 빨간색 위에 올라오도록 z-index 설정 */
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 24px; /* 버튼 텍스트 크기 증가 */
+    border-radius: 20px; /* 둥근 모서리 */
+    border: none;
+    background-color: #3498db; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색 */
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.todo-checkbox {
+    margin-right: 10px;
+    height: 25px; /* 체크박스 크기 증가 */
+    width: 25px; /* 체크박스 크기 증가 */
+}
+
+.todo-text {
+    flex-grow: 1;
+    padding: 15px; /* 텍스트 패딩 증가 */
+    font-size: 18px; /* 텍스트 크기 증가 */
+    border-radius: 10px; /* 둥근 모서리 */
+    border: none;
+    box-sizing: border-box;
+    width: 85%; /* 텍스트 너비 감소 */
+}
+
+.delete-button {
+    padding: 5px 10px;
+    font-size: 18px; /* 버튼 텍스트 크기 증가 */
+    border-radius: 10px; /* 둥근 모서리 */
+    border: none;
+    background-color: #e74c3c; /* 버튼 배경색 */
+    color: white; /* 버튼 텍스트 색 */
+    cursor: pointer;
+    margin-left: 10px;
+}

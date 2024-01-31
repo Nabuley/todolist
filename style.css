@@ -3,6 +3,18 @@ body {
     background-color: #f6e58d; /* 노란색과 상아색이 섞인 배경색 */
 }
 
+.moto {
+    font-size: 2em; /* 글자 크기를 크게 설정합니다. 원하는 크기로 조절하세요. */
+    text-align: center; /* 텍스트를 중앙에 배치합니다. */
+    margin: auto;
+}
+/*아..애매한데*/
+.moto-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
 .container {
     width: 80%;
     margin: auto;

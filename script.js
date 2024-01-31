@@ -2,11 +2,19 @@
 var _mess="good";
 window.onload = function() {
     var userName = localStorage.getItem('user_name');
+    var moto = localStorage.getItem('moto') || '<포기하긴 이르니까!>';
+    if(!(moto.endsWith(">") && moto.startsWith("<"))){
+        moto="<"+moto+">";
+        localStorage.setItem('moto', moto);
+    }
     var todoList = JSON.parse(localStorage.getItem('todo_list')) || [];
+
     if (userName) {
         document.getElementById('user_name').value = userName;
         document.getElementById('title').querySelector('span').textContent = userName + '의 To-Do List';
     }
+
+    document.getElementById('moto').textContent = moto;
 
     todoList.forEach(function(todo) {
         addTodoItem(todo.text, todo.done);
@@ -19,6 +27,8 @@ window.onload = function() {
 
     document.getElementById('reset-button').onclick = function() {
         localStorage.removeItem('todo_list');
+        localStorage.removeItem('moto');
+        document.getElementById('moto').textContent = '<포기하긴 이르니까!>';
         document.getElementById('todo-container').innerHTML = '';
         addTodoItem();
         updateProgress(); /* 항목 초기화 시 게이지 업데이트 */
@@ -29,6 +39,10 @@ window.onload = function() {
         alert(_mess);
     };
 
+    document.getElementById('moto_click').onclick = function() {
+        changeMoto();
+    };
+
     document.getElementById('user_name').onchange = function() {
         document.getElementById('title').querySelector('span').textContent = this.value + '의 To-Do List';
         localStorage.setItem('user_name', this.value);
@@ -36,6 +50,25 @@ window.onload = function() {
 
     updateProgress();
 };
+
+function changeMoto() {
+    var newMoto = prompt("새로운 모토를 입력하세요", "");
+    if (newMoto != "" && typeof newMoto === 'string') {
+        if(!(newMoto.endsWith(">") && newMoto.startsWith("<"))){
+            document.getElementById('moto').textContent = "<"+newMoto+">";
+            localStorage.setItem('moto', newMoto);
+        }
+        else{
+            document.getElementById('moto').textContent = newMoto;
+            localStorage.setItem('moto', newMoto);
+        }
+    }
+    //else{
+    //    newMoto="<포기하긴 이르니까!>";
+    //    document.getElementById('moto').textContent = newMoto;
+    //    localStorage.setItem('moto', newMoto);
+    //}
+}
 
 function addTodoItem(text = '', done = false) {
     var todoContainer = document.getElementById('todo-container');

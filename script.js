@@ -55,13 +55,15 @@ function changeMoto() {
     var newMoto = prompt("새로운 모토를 입력하세요", "");
     if (newMoto != "" && typeof newMoto === 'string') {
         if(!(newMoto.endsWith(">") && newMoto.startsWith("<"))){
-            document.getElementById('moto').textContent = "<"+newMoto+">";
+            newMoto="<"+newMoto+">";
+            document.getElementById('moto').textContent = newMoto;
             localStorage.setItem('moto', newMoto);
         }
         else{
             document.getElementById('moto').textContent = newMoto;
             localStorage.setItem('moto', newMoto);
         }
+        updateProgress();
     }
     //else{
     //    newMoto="<포기하긴 이르니까!>";
@@ -148,8 +150,8 @@ function updateProgress() {
     else if(progress===100){
         _mess="Well done! You've finished everything!!"
     }
-    if(localStorage.getItem('moto')==="<Easter Egg!>" | localStorage.getItem('moto')==="<I want an easter egg!>" |localStorage.getItem('moto')==="<easter Egg!>" |localStorage.getItem('moto')==="<Easter egg!>" |localStorage.getItem('moto')==="<easter egg!>" |localStorage.getItem('moto')==="<Want Easter Egg!>"){
-        _mess="Alright, alright! Please, Never screem at me again. I think you're looking for an easter egg, right? Well, congratulations, you've just found one. This is an easter egg named 'Never Shout At People Again'. Oh, I think you don't like this name, aren't you? Well, it's still an easter egg, so it's something to be happy about. Hey, give it a smile! You're worth it. So.. If you've already found the first one, I think this might be your second easter egg, and for now, it's the last one. What? You want a hint? Okay, just don't shout at me. The hint for the first easter egg is.. (16 / 2) X 2. Give it a try. You might get a nother easter egg!";
+    if(localStorage.getItem('moto')==="<Easter Egg!>" || localStorage.getItem('moto')==="<I want an easter egg!>" || localStorage.getItem('moto')==="<easter Egg!>" || localStorage.getItem('moto')==="<Easter egg!>" || localStorage.getItem('moto')==="<easter egg!>" || localStorage.getItem('moto')==="<Want Easter Egg!>"){
+        _mess="Alright, alright! Please, Never screem at me again. I think you're looking for an easter egg, right? Well, congratulations, you've just found one. This is an easter egg named 'Never Shout At People Again'. Oh, I think you don't like this name, aren't you? Well, it's still an easter egg, so it's something to be happy about. Hey, give it a smile! You're worth it. So.. If you've already found the first one, I think this might be your second easter egg, and for now, it's the last one. What? You want a hint? Okay, just don't shout at me. The hint for the first easter egg is.. (16 / 2) X 2. Give it a try. You might get another easter egg!";
     }
     document.getElementById('progress').style.backgroundSize = isNaN(progress) ? '0% 100%' : progress + '% 100%';
     document.getElementById('progress').textContent = isNaN(progress) ? '0%' : progress + '%';

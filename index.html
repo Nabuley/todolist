@@ -7,11 +7,17 @@
 <body>
     <div class="container">
         <input type="text" id="user_name" placeholder="이름을 입력하세요">
+        <!--<div id="moto" class="moto"><포기하긴 이르니까!></div>--><!--초기 모토 설정-->
+        <div class="moto-container">
+            <div id="moto" class="moto"><포기하긴 이르니까!></div><!--초기 모토 설정-->
+            <button id="moto_click" class="btn">모토 변경</button>
+        </div>
         <div id="title">
             <div id="progress">0%</div>
             <span>의 To-Do List</span>
             <div>
                 <button id="add-button" class="btn">+</button>
+                <!--<button id="moto_click" class="btn">모토 변경</button>-->
                 <button id="reset-button" class="btn">초기화</button>
                 <button id="ending" class="btn">평가받기</button>
             </div>

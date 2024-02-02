@@ -131,37 +131,28 @@ function updateProgress() {
     var progress = Math.round(doneItems.length / todoItems.length * 100);
     if(progress===0){
         _mess="You didn't even start what you were going to do.";
-    }
-    else if(progress<=20){
+    }else if(progress<=20){
         _mess="You're kidding me, right? That's your starting point!";
-    }
-    else if(progress<=40){
+    }else if(progress<=40){
         _mess="I think this is your best starting point";
-    }
-
-    else if(progress<=70){
+    }else if(progress<=70){
         _mess="Now you've got half of your work to do. Keep going";
-    }
-    else if(progress===88){
+    }else if(progress===88){
         _mess="Whoa, an Easter Egg! Hm.. Well, if I were in your shoes, I'll ask me like this: 'Hello, maker! What is your name?' and I'll answer this question like this: 'Hello, user? Thank you for using this website! Not every user finds this message, so I think you're very lucky! Okey, let's reset. Hello, lucky user? I'll answer your question. First, my name is...더보기"//maker=Nabuley
-    }
-    else if(progress<100){
+    }else if(progress<100){
         _mess="Almost There!";
-    }
-    else if(progress===100){
+    }else if(progress===100){
         _mess="Well done! You've finished everything!!"
-    }
-    if(localStorage.getItem('moto')==="<Easter Egg!>" || localStorage.getItem('moto')==="<I want an easter egg!>" || localStorage.getItem('moto')==="<easter Egg!>" || localStorage.getItem('moto')==="<Easter egg!>" || localStorage.getItem('moto')==="<easter egg!>" || localStorage.getItem('moto')==="<Want Easter Egg!>"){
-        _mess="Alright, alright! Please, Never scream at me again. I think you're looking for an easter egg, right? Well, congratulations, you've just found one. This is an easter egg named 'Never Shout At People Again'. Oh, I think you don't like this name, aren't you? Well, it's still an easter egg, so it's something to be happy about. Hey, give it a smile! You're worth it. So.. If you've already found the first one, I think this might be your second easter egg, and for now, it's the last one. What? You want a hint? Okay, just don't shout at me. The hint for the first easter egg is.. (16 / 2) X 2. Give it a try. You might get another easter egg!";
-    }
-    else if(localStorage.getItem('moto')==="<노윤호>" || localStorage.getItem('moto')==="<nabuley>" || localStorage.getItem('moto')==="<Nabuley>" || localStorage.getItem('moto')==="<Nabul>" || localStorage.getItem('moto')==="<Nabul>"){
+    }if(localStorage.getItem('moto')==="<Easter Egg!>" || localStorage.getItem('moto')==="<I want an easter egg!>" || localStorage.getItem('moto')==="<easter Egg!>" || localStorage.getItem('moto')==="<Easter egg!>" || localStorage.getItem('moto')==="<easter egg!>" || localStorage.getItem('moto')==="<Want Easter Egg!>"){
+        _mess="Alright, alright! Please, Never scream at me again. I think you're looking for an easter egg, right? Well, congratulations, you've just found one. This is an easter egg named 'Never Shout At People Again'. Oh, I think you don't like this name, aren't you? Well, it's still an easter egg, so it's something to be happy about. Hey, give it a smile! You're worth it. So.. If you've already found the first one, I think this might be your second easter egg, and for now, it isn't the last one. What? You want a hint? Okay, just don't shout at me. The hint for the first easter egg is.. (16 / 2) X 2. Give it a try. You might get another easter egg!";
+    }else if(localStorage.getItem('moto')==="<노윤호>" || localStorage.getItem('moto')==="<nabuley>" || localStorage.getItem('moto')==="<Nabuley>" || localStorage.getItem('moto')==="<Nabul>" || localStorage.getItem('moto')==="<Nabul>"){
         _mess="Yep, that is my name.";
-    }
-    if(progress===percent){
+    }if(progress===percent){
         _mess="Hey! Don't tuch my code! It's my precious codes! You're really mean to me!";
-    }
-    if(localStorage.getItem('moto')==="<Game>" || localStorage.getItem('moto')==="<up down game>" || localStorage.getItem('moto')==="<game>" || localStorage.getItem('moto')==="<Up-Down Game>" || localStorage.getItem('moto')==="<Up Down Game>"){
+    }if(localStorage.getItem('moto')==="<Game>" || localStorage.getItem('moto')==="<up down game>" || localStorage.getItem('moto')==="<game>" || localStorage.getItem('moto')==="<Up-Down Game>" || localStorage.getItem('moto')==="<Up Down Game>"){
         _mess="https://nabuley.github.io/updowngame/";
+    }else if(localStorage.getItem('moto')==="<Strick Ball Game>" || localStorage.getItem('moto')==="<strick ball game>" || localStorage.getItem('moto')==="<Strick ball game>" || localStorage.getItem('moto')==="<sbg>" || localStorage.getItem('moto')==="<SBG>"){
+        _mess="https://nabuley.github.io/strickballgame/";
     }
     document.getElementById('progress').style.backgroundSize = isNaN(progress) ? '0% 100%' : progress + '% 100%';
     document.getElementById('progress').textContent = isNaN(progress) ? '0%' : progress + '%';

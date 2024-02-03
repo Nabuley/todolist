@@ -153,6 +153,8 @@ function updateProgress() {
         _mess="https://nabuley.github.io/updowngame/";
     }else if(localStorage.getItem('moto')==="<Strick Ball Game>" || localStorage.getItem('moto')==="<strick ball game>" || localStorage.getItem('moto')==="<Strick ball game>" || localStorage.getItem('moto')==="<sbg>" || localStorage.getItem('moto')==="<SBG>"){
         _mess="https://nabuley.github.io/strickballgame/";
+    }else if(localStorage.getItem('moto')==="<More Games>" || localStorage.getItem('moto')==="<more games>" || localStorage.getItem('moto')==="<new up down game>" || localStorage.getItem('moto')==="<nudg>" || localStorage.getItem('moto')==="<NUDG>"){
+        _mess="https://nabuley.github.io/newupdowngame/";
     }
     document.getElementById('progress').style.backgroundSize = isNaN(progress) ? '0% 100%' : progress + '% 100%';
     document.getElementById('progress').textContent = isNaN(progress) ? '0%' : progress + '%';
